@@ -1,0 +1,232 @@
+.main {
+    width: 1008px;
+    height: 350px;
+    background-color: bisque;
+    border-radius: 20px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.startMsg {
+    font-size: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.keyboard {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 998px;
+    height: 350;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.row {
+    width: 100%;
+    height: 60px;
+}
+
+.numberLine,
+.alphaUpperLine,
+.alphaMiddleLine,
+.alphaLowerLine,
+.BottomLine {
+    margin: 5px 0 5px 0;
+}
+
+.row div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    color: black;
+    width: 55px;
+    height: 55px;
+    border: black 1px solid;
+    border-radius: 20%;
+    background: rgb(235, 232, 232);
+    margin-left: 5px;
+    margin-right: 5px;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+div.backspace {
+    width: 115px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+div.tab,
+div.backSlash {
+    width: 85px;
+    border-radius: 10px;
+}
+
+div.capslock {
+    width: 100px;
+    border-radius: 10px;
+}
+
+div.enter {
+    width: 137px;
+    border-radius: 10px;
+}
+
+div.lShift {
+    width: 130px;
+    border-radius: 10px;
+}
+
+div.rShift {
+    width: 174px;
+    border-radius: 10px;
+}
+
+div.lCtrl {
+    width: 65px;
+    border-radius: 10px;
+}
+
+div.space {
+    width: 388px;
+    border-radius: 10px;
+}
+
+div.rCtrl {
+    width: 174px;
+    border-radius: 10px;
+}
+
+
+/*Key colors*/
+
+div.blacktick,
+div.one,
+div.tab,
+div.q,
+div.a,
+div.lShift,
+div.z,
+div.lCtrl,
+div.win {
+    background-color: rgb(255, 160, 122);
+    border-color: rgb(184, 83, 44);
+}
+
+div.two,
+div.w,
+div.s,
+div.x {
+    background-color: rgb(240, 128, 128);
+    border-color: rgb(180, 81, 81);
+    ;
+}
+
+div.three,
+div.e,
+div.d,
+div.c {
+    background-color: rgb(119, 136, 153);
+    border-color: rgb(44, 88, 133);
+}
+
+div.four,
+div.five,
+div.r,
+div.t,
+div.f,
+div.g,
+div.v,
+div.b {
+    background-color: rgb(135, 206, 250);
+    border-color: rgb(49, 144, 204);
+}
+
+div.six,
+div.seven,
+div.y,
+div.u,
+div.h,
+div.j,
+div.n,
+div.m {
+    background-color: rgb(173, 216, 230);
+    border-color: rgb(44, 119, 145);
+}
+
+div.eight,
+div.i,
+div.k,
+div.comma {
+    background-color: rgb(144, 238, 144);
+    border-color: rgb(60, 187, 60);
+}
+
+div.nine,
+div.o,
+div.l,
+div.fullstop {
+    background-color: rgb(255, 184, 194);
+    border-color: rgb(180, 70, 84);
+}
+
+div.zero,
+div.minus,
+div.equalsTo,
+div.backspace,
+div.p,
+div.openedBracket,
+div.closedBracket,
+div.backSlash,
+div.semicolon,
+div.quote,
+div.enter,
+div.frontSlash,
+div.rShift,
+div.rCtrl {
+    background-color: rgb(255, 255, 155);
+    border-color: rgb(192, 192, 52);
+}
+
+div.capslock {
+    background-color: rgb(255, 222, 173);
+    border-color: rgb(194, 138, 54);
+}
+
+div.rAlt,
+div.space,
+div.lAlt {
+    background-color: rgb(32, 178, 170);
+    border-color: rgb(9, 109, 104);
+}
+
+div.lFunction,
+div.rFunction {
+    background-color: rgb(244, 164, 96);
+    border-color: rgb(167, 91, 25);
+}
+
+
+/*Key colors End*/
