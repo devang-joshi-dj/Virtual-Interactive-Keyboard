@@ -1,3 +1,4 @@
+// variables to store both, before-click and on-click background colors of buttons
 var normLPinky = { 'background-color': 'rgb(255, 160, 122)' };
 var lPinky = { 'background-color': 'rgb(184, 83, 44)' };
 
@@ -28,7 +29,7 @@ var capslock = { 'background-color': 'rgb(194, 138, 54)' };
 var normSpaceAlt = { 'background-color': 'rgb(32, 178, 170)' };
 var spaceAlt = { 'background-color': 'rgb(9, 109, 104)' };
 
-function allAlphaUpper() {
+function allAlphaUpper() { // function to convert all alphabets into uppercase
     $(".q").text("Q");
     $(".w").text("W");
     $(".e").text("E");
@@ -57,7 +58,7 @@ function allAlphaUpper() {
     $(".m").text("M");
 }
 
-function allAlphaLower() {
+function allAlphaLower() { // function to convert all alphabets into lowercase
     $(".q").text("q");
     $(".w").text("w");
     $(".e").text("e");
@@ -86,7 +87,7 @@ function allAlphaLower() {
     $(".m").text("m");
 }
 
-function allShiftedSymbols() {
+function allShiftedSymbols() { // function which changes all the numericals and symbols to their shifted symbols
     $(".blacktick").text("~");
     $(".one").text("!");
     $(".two").text("@");
@@ -110,7 +111,7 @@ function allShiftedSymbols() {
     $(".frontSlash").text("?");
 }
 
-function allNonShiftedSymbols() {
+function allNonShiftedSymbols() { // function which changes all the numericals and symbols to their original numericals and symbols
     $(".blacktick").text("`");
     $(".one").text("1");
     $(".two").text("2");
@@ -134,7 +135,7 @@ function allNonShiftedSymbols() {
     $(".frontSlash").text("/");
 }
 
-function keyUp(event) {
+function keyUp(event) { //function mainly responsible for recognizing the first key press and fading out start message and then fading in the main keyboard
     var x = event.which || event.keyCode;
     if (typeof x == "number") {
         $("div.startMsg").fadeOut("fast");
@@ -142,11 +143,12 @@ function keyUp(event) {
     }
 }
 
+// checking if capslock on or off and if it is either of them then certain capslocked or non-capslocked keys will be shown on the window
 var isCapslockOn;
 document.addEventListener("keydown", (e) => {
     if (e.getModifierState("CapsLock")) {
         isCapslockOn = true;
-        $("div.capslock").css("color", "olive");
+        $("div.capslock").css("color", "rgb(120, 120, 25)"); // CAPSLOCK text color
         allAlphaUpper();
         if (e.getModifierState("Shift")) {
             allAlphaLower();
@@ -161,7 +163,8 @@ document.addEventListener("keydown", (e) => {
     }
 })
 
-
+// Events which will happen if a specific key is pressed Up
+// Events refers to highlight of specific key when that specific key is pressed on keyboard
 $(document).on('keydown', function(event) {
     e = event.which;
     if (e == 192) {
@@ -343,10 +346,12 @@ $(document).on('keydown', function(event) {
     }
 });
 
+// Events which will happen if a specific key is pressed Up
+// Events refers to de-emphasize/normal-state of specific key when that specific key is pressed up  on keyboard
 $(document).on('keyup', function(event) {
     e = event.which;
     if (e == 192) {
-        $("div.blacktick").css(normLPinky);
+        $(".blacktick").css(normLPinky);
     } else
     if (e == 49) {
         $("div.one").css(normLPinky);
@@ -524,3 +529,96 @@ $(document).on('keyup', function(event) {
         $("div.space").css(normSpaceAlt);
     }
 });
+
+$(window).blur(function() { // function to bring all keys to their normal color in the case when window's focus is lost due to any case and if any key is prevented from keydown at that moment when focus was lost, so this function can resolve the problem and won't let happen that mess in frontend
+    $(".blacktick").css(normLPinky);
+    $("div.one").css(normLPinky);
+    $("div.two").css(normLRing);
+    $("div.three").css(normLMiddle);
+    $("div.four").css(normLIndex);
+    $("div.five").css(normLIndex);
+    $("div.six").css(normRIndex);
+    $("div.seven").css(normRIndex);
+    $("div.eight").css(normRMiddle);
+    $("div.nine").css(normRRing);
+    $("div.zero").css(normRPinky);
+    $("div.minus").css(normRPinky);
+    $("div.equalsTo").css(normRPinky);
+    $("div.backspace").css(normRPinky);
+    $("div.tab").css(normLPinky);
+    $("div.q").css(normLPinky);
+    $("div.w").css(normLRing);
+    $("div.e").css(normLMiddle);
+    $("div.r").css(normLIndex);
+    $("div.t").css(normLIndex);
+    $("div.y").css(normRIndex);
+    $("div.u").css(normRIndex);
+    $("div.i").css(normRMiddle);
+    $("div.o").css(normRRing);
+    $("div.p").css(normRPinky);
+    $("div.openedBracket").css(normRPinky);
+    $("div.closedBracket").css(normRPinky);
+    $("div.backSlash").css(normRPinky);
+    $("div.capslock").css(normCapslock);
+    $("div.a").css(normLPinky);
+    $("div.s").css(normLRing);
+    $("div.d").css(normLMiddle);
+    $("div.f").css(normLIndex);
+    $("div.g").css(normLIndex);
+    $("div.h").css(normRIndex);
+    $("div.j").css(normRIndex);
+    $("div.k").css(normRMiddle);
+    $("div.l").css(normRRing);
+    $("div.semicolon").css(normRPinky);
+    $("div.quote").css(normRPinky);
+    $("div.enter").css(normRPinky);
+    $("div.lShift").css(normLPinky);
+    $("div.rShift").css(normRPinky);
+    $("div.z").css(normLPinky);
+    $("div.x").css(normLRing);
+    $("div.c").css(normLMiddle);
+    $("div.v").css(normLIndex);
+    $("div.b").css(normLIndex);
+    $("div.n").css(normRIndex);
+    $("div.m").css(normRIndex);
+    $("div.comma").css(normRMiddle);
+    $("div.fullstop").css(normRRing);
+    $("div.frontSlash").css(normRPinky);
+    $("div.lCtrl").css(normLPinky);
+    $("div.rCtrl").css(normRPinky);
+    $("div.win").css(normLPinky);
+    $("div.lAlt").css(normSpaceAlt);
+    $("div.rAlt").css(normSpaceAlt);
+    $("div.space").css(normSpaceAlt);
+})
+
+// theme Mode Light/Dark
+function themeMode() { // function which will work accordingly checking if theme-mode button is on or off
+    if (document.getElementById("themeMode").checked == true) {
+        $("body").css({
+            "background-color": "#121212",
+            "transition": "0.4s"
+        });
+        $(".main").css({
+            "background-color": "rgb(169, 169, 169)",
+            "transition": "0.4s"
+        });
+        $(".startMsg").css({
+            "color": "white",
+            "transition": "0.4s"
+        });
+    } else { // if theme-mode button is off then the following actions will take place
+        $("body").css({
+            "background-color": "white",
+            "transition": "0.4s"
+        });
+        $(".main").css({
+            "background-color": "rgb(255, 228, 196)",
+            "transition": "0.4s"
+        });
+        $(".startMsg").css({
+            "color": "black",
+            "transition": "0.4s"
+        });
+    }
+}
