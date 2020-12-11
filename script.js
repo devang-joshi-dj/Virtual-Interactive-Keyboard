@@ -135,13 +135,28 @@ function allNonShiftedSymbols() { // function which changes all the numericals a
     $(".frontSlash").text("/");
 }
 
-function keyUp(event) { //function mainly responsible for recognizing the first key press and fading out start message and then fading in the main keyboard
+$(document).ready(function() {
+    $("i.material-icons").click(function() {
+        var copyText = document.getElementById("textArea");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999)
+        document.execCommand("copy");
+    });
+});
+
+$(document).keyup(function(event) { //function mainly responsible for recognizing the first key press and fading out start message and then fading in the main keyboard
     var x = event.which || event.keyCode;
     if (typeof x == "number") {
         $("div.startMsg").fadeOut("fast");
         $("div.keyboard").fadeIn("slow");
     }
-}
+    document.getElementById("textArea").disabled = false; // enabling textarea after the first keyup event
+    $("#textArea").focus(); //textarea will be focused automatically when any key is pressed
+});
+
+$(document).click(function(event) {
+    $("#textArea").focus(); //textarea will be focused automatically when even when the focus is out textarea, so textarea will never lose focus because that is what is important
+});
 
 // checking if capslock on or off and if it is either of them then certain capslocked or non-capslocked keys will be shown on the window
 var isCapslockOn;
@@ -161,7 +176,7 @@ document.addEventListener("keydown", (e) => {
             allAlphaUpper();
         }
     }
-})
+});
 
 // Events which will happen if a specific key is pressed Up
 // Events refers to highlight of specific key when that specific key is pressed on keyboard
@@ -590,35 +605,61 @@ $(window).blur(function() { // function to bring all keys to their normal color 
     $("div.lAlt").css(normSpaceAlt);
     $("div.rAlt").css(normSpaceAlt);
     $("div.space").css(normSpaceAlt);
-})
+});
 
-// theme Mode Light/Dark
-function themeMode() { // function which will work accordingly checking if theme-mode button is on or off
-    if (document.getElementById("themeMode").checked == true) {
-        $("body").css({
-            "background-color": "#121212",
-            "transition": "0.4s"
-        });
-        $(".main").css({
-            "background-color": "rgb(169, 169, 169)",
-            "transition": "0.4s"
-        });
-        $(".startMsg").css({
-            "color": "white",
-            "transition": "0.4s"
-        });
-    } else { // if theme-mode button is off then the following actions will take place
-        $("body").css({
-            "background-color": "white",
-            "transition": "0.4s"
-        });
-        $(".main").css({
-            "background-color": "rgb(255, 228, 196)",
-            "transition": "0.4s"
-        });
-        $(".startMsg").css({
-            "color": "black",
-            "transition": "0.4s"
-        });
-    }
-}
+$(document).ready(function() {
+    $("#themeMode").click(function() {
+        // function which will work accordingly checking if theme-mode button is on or off
+        if (document.getElementById("themeMode").checked == true) {
+            $("body").css({
+                "background-color": "#121212",
+                "transition": "0.4s"
+            });
+            $(".bgKeyboard").css({
+                "background-color": "rgb(169, 169, 169)",
+                "transition": "0.4s"
+            });
+            $(".startMsg").css({
+                "color": "white",
+                "transition": "0.4s"
+            });
+            $("i.material-icons").css({
+                "color": "white",
+                "transition": "0.4s"
+            });
+            $("textarea").css({
+                "border-color": "white",
+                "background-color": "#424242",
+                "color": "white",
+                "transition": "0.4s"
+            });
+        } else { // if theme-mode button is off then the following actions will take place
+            $("textarea").css({
+                "border-color": "rgb(27, 27, 27)",
+                "background-color": "rgb(240, 248, 255)",
+                "color": "black",
+                "transition": "0.4s"
+            });
+            $("i.material-icons").css({
+                "color": "black",
+                "transition": "0.4s"
+            });
+            $("i.material-icons").css({
+                "color": "black",
+                "transition": "0.4s"
+            });
+            $(".startMsg").css({
+                "color": "black",
+                "transition": "0.4s"
+            });
+            $(".bgKeyboard").css({
+                "background-color": "rgb(255, 228, 196)",
+                "transition": "0.4s"
+            });
+            $("body").css({
+                "background-color": "white",
+                "transition": "0.4s"
+            });
+        }
+    });
+});

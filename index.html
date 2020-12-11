@@ -1,97 +1,104 @@
 <!DOCTYPE html>
-<html lang="en-us" onkeyup="keyUp(event)">
+<html lang="en-us">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Type Anything</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Virtual Interactive Keyboard</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="http://code.jquery.com/color/jquery.color-2.1.2.min.js" integrity="sha256-H28SdxWrZ387Ldn0qogCzFiUDDxfPiNIyJX7BECQkDE=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="script.js"></script>
 </head>
 
 <body>
-    <div class="colorMode">
-        <input type="checkbox" name="" id="themeMode" onclick="themeMode()">
+    <div class="themeMode">
+        <input type="checkbox" name="" id="themeMode">
     </div>
     <div class="main">
-        <div class="startMsg">Press any key to Continue...</div>
-        <div class="keyboard">
-            <div class="row numberLine">
-                <div class="blacktick">`</div>
-                <div class="one">1</div>
-                <div class="two">2</div>
-                <div class="three">3</div>
-                <div class="four">4</div>
-                <div class="five">5</div>
-                <div class="six">6</div>
-                <div class="seven">7</div>
-                <div class="eight">8</div>
-                <div class="nine">9</div>
-                <div class="zero">0</div>
-                <div class="minus">-</div>
-                <div class="equalsTo">=</div>
-                <div class="backspace">BACKSPACE</div>
-            </div>
+        <div class="textdiv">
+            <textarea id="textArea" disabled></textarea>
+            <i class="material-icons">content_copy</i>
+        </div>
+        <div class="bgKeyboard">
+            <div class="startMsg">Press any key to Continue...</div>
+            <div class="keyboard">
+                <div class="row numberLine">
+                    <div class="blacktick">`</div>
+                    <div class="one">1</div>
+                    <div class="two">2</div>
+                    <div class="three">3</div>
+                    <div class="four">4</div>
+                    <div class="five">5</div>
+                    <div class="six">6</div>
+                    <div class="seven">7</div>
+                    <div class="eight">8</div>
+                    <div class="nine">9</div>
+                    <div class="zero">0</div>
+                    <div class="minus">-</div>
+                    <div class="equalsTo">=</div>
+                    <div class="backspace">BACKSPACE</div>
+                </div>
 
-            <div class="row alphaUpperLine">
-                <div class="tab">TAB</div>
-                <div class="q">Q</div>
-                <div class="w">W</div>
-                <div class="e">E</div>
-                <div class="r">R</div>
-                <div class="t">T</div>
-                <div class="y">Y</div>
-                <div class="u">U</div>
-                <div class="i">I</div>
-                <div class="o">O</div>
-                <div class="p">P</div>
-                <div class="openedBracket">[</div>
-                <div class="closedBracket">]</div>
-                <div class="backSlash">\</div>
-            </div>
+                <div class="row alphaUpperLine">
+                    <div class="tab">TAB</div>
+                    <div class="q">Q</div>
+                    <div class="w">W</div>
+                    <div class="e">E</div>
+                    <div class="r">R</div>
+                    <div class="t">T</div>
+                    <div class="y">Y</div>
+                    <div class="u">U</div>
+                    <div class="i">I</div>
+                    <div class="o">O</div>
+                    <div class="p">P</div>
+                    <div class="openedBracket">[</div>
+                    <div class="closedBracket">]</div>
+                    <div class="backSlash">\</div>
+                </div>
 
-            <div class="row alphaMiddleLine">
-                <div class="capslock">CAPS<br>LOCK</div>
-                <div class="a">A</div>
-                <div class="s">S</div>
-                <div class="d">D</div>
-                <div class="f">F</div>
-                <div class="g">G</div>
-                <div class="h">H</div>
-                <div class="j">J</div>
-                <div class="k">K</div>
-                <div class="l">L</div>
-                <div class="semicolon">;</div>
-                <div class="quote">'</div>
-                <div class="enter">ENTER</div>
-            </div>
+                <div class="row alphaMiddleLine">
+                    <div class="capslock">CAPS<br>LOCK</div>
+                    <div class="a">A</div>
+                    <div class="s">S</div>
+                    <div class="d">D</div>
+                    <div class="f">F</div>
+                    <div class="g">G</div>
+                    <div class="h">H</div>
+                    <div class="j">J</div>
+                    <div class="k">K</div>
+                    <div class="l">L</div>
+                    <div class="semicolon">;</div>
+                    <div class="quote">'</div>
+                    <div class="enter">ENTER</div>
+                </div>
 
-            <div class="row alphaLowerLine">
-                <div class="lShift">SHIFT</div>
-                <div class="z">Z</div>
-                <div class="x">X</div>
-                <div class="c">C</div>
-                <div class="v">V</div>
-                <div class="b">B</div>
-                <div class="n">N</div>
-                <div class="m">M</div>
-                <div class="comma">,</div>
-                <div class="fullstop">.</div>
-                <div class="frontSlash">/</div>
-                <div class="rShift">SHIFT</div>
-            </div>
+                <div class="row alphaLowerLine">
+                    <div class="lShift">SHIFT</div>
+                    <div class="z">Z</div>
+                    <div class="x">X</div>
+                    <div class="c">C</div>
+                    <div class="v">V</div>
+                    <div class="b">B</div>
+                    <div class="n">N</div>
+                    <div class="m">M</div>
+                    <div class="comma">,</div>
+                    <div class="fullstop">.</div>
+                    <div class="frontSlash">/</div>
+                    <div class="rShift">SHIFT</div>
+                </div>
 
-            <div class="row BottomLine">
-                <div class="lCtrl">CTRL</div>
-                <div class="lFunction">FN</div>
-                <div class="win">WIN</div>
-                <div class="lAlt">ALT</div>
-                <div class="space">SPACE</div>
-                <div class="rAlt">ALT</div>
-                <div class="rFunction">FN</div>
-                <div class="rCtrl">CTRL</div>
+                <div class="row BottomLine">
+                    <div class="lCtrl">CTRL</div>
+                    <div class="lFunction">FN</div>
+                    <div class="win">WIN</div>
+                    <div class="lAlt">ALT</div>
+                    <div class="space">SPACE</div>
+                    <div class="rAlt">ALT</div>
+                    <div class="rFunction">FN</div>
+                    <div class="rCtrl">CTRL</div>
+                </div>
             </div>
         </div>
     </div>

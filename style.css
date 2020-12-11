@@ -14,9 +14,7 @@ input[type="checkbox"] {
     box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
     transition: .2s;
     top: 50%;
-    left: 95%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    left: 80%;
 }
 
 input:checked[type="checkbox"] {
@@ -43,16 +41,65 @@ input:checked[type="checkbox"]::before {
 }
 
 .main {
+    width: 90%;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.textdiv {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+textarea {
+    width: 800px;
+    height: 200px;
+    background-color: rgb(240, 248, 255);
+    border: 5px solid rgb(27, 27, 27);
+    outline: none;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    resize: none;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+i.material-icons {
+    cursor: pointer;
+    position: absolute;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+::-moz-selection {
+    background: rgb(201, 230, 255);
+}
+
+::selection {
+    background: rgb(201, 230, 255);
+}
+
+.bgKeyboard {
     width: 1008px;
     height: 350px;
     background-color: rgb(255, 219, 174);
     border-radius: 20px;
     margin: 0;
     position: absolute;
-    top: 50%;
+    bottom: 0;
     left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0);
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
