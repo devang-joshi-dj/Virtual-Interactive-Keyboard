@@ -6,7 +6,6 @@
 ### **Technologies** 
 This Project is created with:
  - Javascript
- - jQuery v3.5.1
  - HTML5
  - CSS3
 
