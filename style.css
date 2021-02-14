@@ -3,6 +3,26 @@ body {
     height: 100vh;
 }
 
+.themeMode {
+    display: inline-block;
+    position: absolute;
+    background-color: rgb(56, 56, 56);
+    padding: 2px;
+    top: 4px;
+    right: 20px;
+    border-radius: 50px;
+}
+
+.themeMode>* {
+    line-height: 30px;
+    float: left;
+    cursor: pointer;
+}
+
+label {
+    color: rgb(255, 255, 255)
+}
+
 input[type="checkbox"] {
     position: relative;
     width: 40px;
@@ -13,8 +33,6 @@ input[type="checkbox"] {
     outline: none;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
     transition: .2s;
-    top: 50%;
-    left: 80%;
 }
 
 input:checked[type="checkbox"] {
@@ -109,6 +127,9 @@ i.material-icons {
 }
 
 .startMsg {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s linear;
     font-size: 44px;
     margin: 0;
     padding: 0;
@@ -121,7 +142,9 @@ i.material-icons {
 }
 
 .keyboard {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
     margin-left: auto;
     margin-right: auto;
     width: 998px;
@@ -139,11 +162,7 @@ i.material-icons {
     height: 60px;
 }
 
-.numberLine,
-.alphaUpperLine,
-.alphaMiddleLine,
-.alphaLowerLine,
-.BottomLine {
+.numberLine, .alphaUpperLine, .alphaMiddleLine, .alphaLowerLine, .BottomLine {
     margin: 5px 0 5px 0;
 }
 
@@ -171,8 +190,7 @@ div.backspace {
     font-size: 18px;
 }
 
-div.tab,
-div.backSlash {
+div.tab, div.backSlash {
     width: 85px;
     border-radius: 10px;
 }
@@ -212,93 +230,45 @@ div.rCtrl {
     border-radius: 10px;
 }
 
-
 /*Key colors*/
 
-div.blacktick,
-div.one,
-div.tab,
-div.q,
-div.a,
-div.lShift,
-div.z,
-div.lCtrl,
-div.win {
+div.blacktick, div.one, div.tab, div.q, div.a, div.lShift, div.z, div.lCtrl, div.win {
     background-color: rgb(255, 160, 122);
     border-color: rgb(184, 83, 44);
 }
 
-div.two,
-div.w,
-div.s,
-div.x {
+div.two, div.w, div.s, div.x {
     background-color: rgb(240, 128, 128);
     border-color: rgb(180, 81, 81);
     ;
 }
 
-div.three,
-div.e,
-div.d,
-div.c {
+div.three, div.e, div.d, div.c {
     background-color: rgb(119, 136, 153);
     border-color: rgb(44, 88, 133);
 }
 
-div.four,
-div.five,
-div.r,
-div.t,
-div.f,
-div.g,
-div.v,
-div.b {
+div.four, div.five, div.r, div.t, div.f, div.g, div.v, div.b {
     background-color: rgb(135, 206, 250);
     border-color: rgb(49, 144, 204);
 }
 
-div.six,
-div.seven,
-div.y,
-div.u,
-div.h,
-div.j,
-div.n,
-div.m {
+div.six, div.seven, div.y, div.u, div.h, div.j, div.n, div.m {
     background-color: rgb(173, 216, 230);
     border-color: rgb(44, 119, 145);
 }
 
-div.eight,
-div.i,
-div.k,
-div.comma {
+div.eight, div.i, div.k, div.comma {
     background-color: rgb(144, 238, 144);
     border-color: rgb(60, 187, 60);
 }
 
-div.nine,
-div.o,
-div.l,
-div.fullstop {
+div.nine, div.o, div.l, div.fullstop {
     background-color: rgb(255, 184, 194);
     border-color: rgb(180, 70, 84);
 }
 
-div.zero,
-div.minus,
-div.equalsTo,
-div.backspace,
-div.p,
-div.openedBracket,
-div.closedBracket,
-div.backSlash,
-div.semicolon,
-div.quote,
-div.enter,
-div.frontSlash,
-div.rShift,
-div.rCtrl {
+div.zero, div.minus, div.equalsTo, div.backspace, div.p, div.openedBracket, div.closedBracket, div.backSlash, div.semicolon, div.quote, div.enter, div.frontSlash, div.rShift, div.rCtrl {
     background-color: rgb(255, 255, 155);
     border-color: rgb(192, 192, 52);
 }
@@ -308,18 +278,65 @@ div.capslock {
     border-color: rgb(194, 138, 54);
 }
 
-div.rAlt,
-div.space,
-div.lAlt {
+div.rAlt, div.space, div.lAlt {
     background-color: rgb(32, 178, 170);
     border-color: rgb(9, 109, 104);
 }
 
-div.lFunction,
-div.rFunction {
+div.lFunction, div.rFunction {
     background-color: rgb(244, 164, 96);
     border-color: rgb(167, 91, 25);
 }
 
-
 /*Key colors End*/
+
+/* Dark Mode Start */
+
+.bodyDark {
+    background-color: rgb(18, 18, 18);
+}
+
+.themeModeDark {
+    background-color: rgb(192, 192, 192);
+}
+
+.labelDark {
+    color: rgb(0, 0, 0);
+}
+
+.bgKeyboardDark {
+    background-color: rgb(169, 169, 169);
+}
+
+.startMsgDark {
+    color: rgb(255, 255, 255);
+}
+
+i.material-icons-dark {
+    color: rgb(255, 255, 255);
+}
+
+.textAreaDark {
+    border-color: rgb(255, 255, 255);
+    background-color: rgb(66, 66, 66);
+    color: rgb(255, 255, 255);
+}
+
+/* Dark Mode End */
+
+.transition {
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.showToggle {
+    visibility: visible;
+    opacity: 1;
+}
+
+.hideToggle {
+    visibility: hidden;
+    opacity: 0;
+}
