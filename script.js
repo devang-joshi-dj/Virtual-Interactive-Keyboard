@@ -387,7 +387,7 @@ document.addEventListener('keydown', (event) => {
 
 document.addEventListener('keyup', (event) => {
     // Events which will happen if a specific key is pressed Up
-    // Events refers to de-emphasize/normal-state of specific key when that specific key is pressed up  on keyboard
+    // Events refers to de-emphasize/normal-state of specific key when that specific key is pressed up on keyboard
     const e = event.which;
     switch (e) {
         case 192:
