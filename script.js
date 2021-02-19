@@ -200,7 +200,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 document.addEventListener('keydown', (event) => {
-    // Events which will happen if a specific key is pressed Up
+    // Events which will happen if a specific key is pressed Down
     // Events refers to highlight of specific key when that specific key is pressed on keyboard
     const e = event.which;
     switch (e) {
